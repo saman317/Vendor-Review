@@ -6,6 +6,10 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
+const bcrypt = require("bcrypt");
+
+
+
 
 const authController = require('./controllers/auth.js');
 
