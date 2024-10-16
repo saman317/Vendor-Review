@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-    
+    <%- include('./partials/_navbar.ejs') %>
     <%if (user) { %>
       <h1>Welcome, <%= user.username %></h1>
     <% } %>
     <h1>VendorTea</h1>
     <p>Spill and get the tea on all the vendors.</p>
-    <a href="/auth/sign-up">Sign up</a>
-    <a href="/auth/sign-in">Sign in</a>
+    
   </body>
 </html>

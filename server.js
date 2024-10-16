@@ -7,8 +7,9 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
 const bcrypt = require("bcrypt");
-
-
+const vendorController = require("./controllers/vendors.js")
+const isSignedIn= require("./middleware/is-signed-in.js")
+const passUserToView=require("./middleware/pass-user-to-view.js")
 
 
 const authController = require('./controllers/auth.js');
@@ -20,6 +21,7 @@ mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
@@ -39,8 +41,10 @@ app.get('/', (req, res) => {
 });
 
 
-
+app.use(passUserToView)
 app.use('/auth', authController);
+app.use(isSignedIn);
+app.use("/users/:userId/vendors", vendorController)
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

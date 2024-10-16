@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vendor</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Spill the tea on a vendor</h1>
+    <form action="/users/<%=user._id%>/vendors" method="POST">
+        <label for="company">Company:</label>
+        <input type="text" name="company" id="company" />
+
+        <label for="recommend">Recommend ?</label>
+        <input type="checkbox" name="recommend" id="recommend" />
+
+        <label for="priceRange">Price Range:</label>
+        <input type="string"  name="priceRange" id="priceRange"/>
+
+        <label for="onTime"></label>On Time ?</label>
+        <input type="checkbox" name="onTime" id="onTime"/>
+
+        <label for="serviceInfo">Describe Service and Experience</label>
+        <textarea type="text" name="serviceInfo" id="serviceInfo"></textarea>
+    </form>
+        <button type="submit">Add Your Tea</button>
+
+
+
+    </form>
+
+   
+
+</body>
+</html>

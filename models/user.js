@@ -3,9 +3,8 @@ const mongoose= require("mongoose");
 //subschemas
 
 const commentSchema = new mongoose.Schema({
-    text: String
-
-
+    text: String,
+    
 
 })
 
@@ -13,6 +12,7 @@ const vendorSchema = new mongoose.Schema({
     company: {
         type: String,
         required: true,
+        unique: true,
     },
 
     recommend: {
@@ -29,7 +29,7 @@ const vendorSchema = new mongoose.Schema({
         required:true
     },
 
-    service:{
+    serviceInfo:{
         type: String,
         
     },
