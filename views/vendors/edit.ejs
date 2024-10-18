@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your Review</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit the tea on a vendor</h1>
+    <form action="/users/<%=user._id%>/vendors/<%=vendor._id%>/?_method=PUT" method="POST">
+        <label for="company">Company:</label>
+        <input type="text" name="company" id="company" value= "<%=vendor.company%>"/>
+
+        <label for="recommend">Recommend ?</label>
+        <input type="checkbox" name="recommend" id="recommend" value= "<%=vendor.recommend %>"/>
+
+        <label for="priceRange">Price Range:</label>
+        <input type="string"  name="priceRange" id="priceRange" value="<%=vendor.priceRange%>"/>
+
+        <label for="onTime"></label>On Time ?</label>
+        <input type="checkbox" name="onTime" id="onTime" value="<%=vendor.onTime%>"/>
+
+        <label for="serviceInfo">Describe Service and Experience</label>
+        <textarea type="text" name="serviceInfo" id="serviceInfo" >
+            <%=vendor.serviceInfo%>
+        </textarea>
+        <button type="submit">Edit Your Tea</button>
+
+    </form>
+        
+
+
+
+    
+</body>
+</html>

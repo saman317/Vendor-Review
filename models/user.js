@@ -21,7 +21,7 @@ const vendorSchema = new mongoose.Schema({
     },
 
     priceRange: {
-        type: Number,
+        type: String,
     },
 
     onTime: {

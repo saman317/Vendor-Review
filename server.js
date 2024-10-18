@@ -10,6 +10,7 @@ const bcrypt = require("bcrypt");
 const vendorController = require("./controllers/vendors.js")
 const isSignedIn= require("./middleware/is-signed-in.js")
 const passUserToView=require("./middleware/pass-user-to-view.js")
+const MongoStore = require("connect-mongo")
 
 
 const authController = require('./controllers/auth.js');
@@ -31,6 +32,9 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI,
+    })
   })
 );
 

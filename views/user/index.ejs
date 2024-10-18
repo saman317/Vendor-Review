@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Vendors</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>All Vendors </h1>
+    <% vendors.forEach((vendor)=>{%>
+        <ul>
+            <li>
+                
+                <a href="/users/<%=user._id%>">  <%=vendor.username %></a>
+                <a href=""> <%=user.username.vendor.company%></a>
+            </li>
+        </ul>
+
+
+   <% }) %>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= vendor.company %> Details</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= vendor.company %></h1>
+    <p><strong>Recommendation:</strong> <%= vendor.recommend ? 'Yes' : 'No' %></p>
+    <p><strong>Price Range:</strong> <%= vendor.priceRange %></p>
+    <p><strong>On Time:</strong> <%= vendor.onTime ? 'Yes' : 'No' %></p>
+    <p><strong>Service Info:</strong> <%= vendor.serviceInfo %></p>
+    <a href="/users">Back to Vendors</a>
+</body>
+</html>
