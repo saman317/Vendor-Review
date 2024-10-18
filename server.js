@@ -11,7 +11,7 @@ const vendorController = require("./controllers/vendors.js")
 const isSignedIn= require("./middleware/is-signed-in.js")
 const passUserToView=require("./middleware/pass-user-to-view.js")
 const MongoStore = require("connect-mongo")
-
+const path=require("path");
 
 const authController = require('./controllers/auth.js');
 
@@ -23,9 +23,10 @@ mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-
+//MiddleWare
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(
   session({

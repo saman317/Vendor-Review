@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal&display=swap');
+
+body{
+    background-image:url("https://i.pinimg.com/originals/e4/d2/62/e4d2627ddfef362e2a0e16976a0e28b7.jpg");
+    background-size:cover;
+    font-family: "Metal", sans-serif;
+    text-align:center;
+}

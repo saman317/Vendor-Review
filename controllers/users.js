@@ -31,6 +31,7 @@ router.get("/vendors/:vendorId", async (req, res) => {
     const pageOwner = await User.findById(req.params.userId);
     // .id is a mongoose method to find a subdocument by its id
     
+    
     res.render("user/show.ejs", {pageOwner});
   });
 
