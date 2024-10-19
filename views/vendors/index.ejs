@@ -8,13 +8,13 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <a href= "/users/<%=user._id%>/vendors/new">Add a Vendor</a>
+    <a class="add-vendor" href= "/users/<%=user._id%>/vendors/new">Add a Vendor</a>
     <% if(vendors.length){ %>
         <h1>My Vendor List</h1>
     <ul>
         <%vendors.forEach((vendor) =>{%>
             <li>
-                <a href="/users/<%=user._id%>/vendors/<%=vendor._id%>">
+                <a class="vendor-company" href="/users/<%=user._id%>/vendors/<%=vendor._id%>">
                     <%= `${vendor.company}` %>
                 </a>
 

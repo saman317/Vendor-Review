@@ -1,8 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal&display=swap');
 
 body{
-    background-image:url("https://i.pinimg.com/originals/e4/d2/62/e4d2627ddfef362e2a0e16976a0e28b7.jpg");
+    background-image:url("https://img.freepik.com/premium-photo/hand-drawn-watercolor-flower-frame-template-event-invitation_1000823-109595.jpg");
     background-size:cover;
+    position:relative;
     font-family: "Metal", sans-serif;
     text-align:center;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    height: 80vh;/*centered the content more to the middle of the page*/
+    width: 100vw
+}
+
+h1{
+    color:#BC8F8F;
+    font-size:4.0em;
+    font-weight: bold;
+
+
+}
+
+p{
+    color:#556B2F;
+    font-size:1.5em;
+}
+
+.auth-link,
+.vendor-review,
+.add-vendor{
+    color:#556B2F;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    font-size:1.5em;
+
+}
+
+.signin-container,
+.signup-container{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    color:#556B2F;
+    font-size: 1.5em;
+    font-weight:bold;
+
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    font-size: 2.0em;
+    color:#556B2F;
+    font-weight:bold;
+   
+
+}
+
+button{
+    padding: 5px;
+    background-color:#DCDCDC ;
+    color:#556B2F;
+    border-radius: 30px;
+    margin: 10px 0;
+    font-size:0.5em;
+
+
 }
