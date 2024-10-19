@@ -14,6 +14,8 @@ router.get("/", async (req,res)=> {
         vendors = [...vendors,...user.vendors]
         //copy all the old vendors and the users vendors in
 
+        console.log(vendors)
+
 
     })
     
@@ -30,7 +32,7 @@ router.get("/", async (req,res)=> {
 router.get("/vendors/:vendorId", async (req, res) => {
     const pageOwner = await User.findById(req.params.userId);
     // .id is a mongoose method to find a subdocument by its id
-    
+
     
     res.render("user/show.ejs", {pageOwner});
   });

@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 app.use(passUserToView)
 app.use('/auth', authController);
 app.use(isSignedIn);
-app.use("/users/:userId/vendors", vendorController)
+app.use("/users/:userId/vendors",(req,res,next)=>{(req.userId=req.params.userId);next()}, vendorController)
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

@@ -16,6 +16,30 @@ router.get("/", async (req,res)=>{
         res.render("index.ejs")
     }
 });
+router.get("/all", async (req,res)=> {
+    try{
+    const allUsers= await User.find();
+    let vendors = []
+
+    allUsers.forEach((user)=>{
+        console.log(user.vendors)
+        vendors = [...vendors,...(user.vendors.map(v=>({...v._doc,userId:user._id})))]
+        //copy all the old vendors and the users vendors in
+        //update every vendor so it has a user
+
+        console.log(vendors)
+
+
+    })
+    
+     res.render("user/index.ejs", {vendors})
+    }catch(error){
+        console.log(error)
+        res.redirect("/")
+
+    }
+
+})
 //New /users/:userId/vendors/new GET
 router.get("/new", (req,res)=>{
     res.render("vendors/new.ejs")
@@ -49,7 +73,8 @@ router.post("/", async(req,res)=>{
 })
 //SHOW /users/:userId/vendors/:vendorId GET
 router.get("/:vendorId", async(req,res)=>{
-    const currentUser = await User.findById(req.session.user._id);
+    const currentUser = await User.findById(req.userId);
+    console.log(req.params)
     const vendor = currentUser.vendors.id(req.params.vendorId);
     res.render("vendors/show.ejs", {vendor})
 
