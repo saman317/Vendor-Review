@@ -129,66 +129,66 @@ router.delete("/:vendorId", async(req,res)=>{
         res.redirect("/");
     }
 })
-//Comments
-//Create /users/:userId/vendors/comments POST
-router.post("/users/:userId/vendors/comments", async(req,res)=>{
-    try{
-        const currentUser = await User.findById(req.session.user._id);
-        const vendor = currentUser.vendors.id(req.params.vendorId);
-        vendor.comments.push({text:req.body.text})
+// //Comments
+// //Create /users/:userId/vendors/comments POST
+// router.post("/users/:userId/vendors/comments", async(req,res)=>{
+//     try{
+//         const currentUser = await User.findById(req.session.user._id);
+//         const vendor = currentUser.vendors.id(req.params.vendorId);
+//         vendor.comments.push({text:req.body.text})
         
 
-        await currentUser.save();
-        res.redirect(`/users/${currentUser._id}/vendors/${vendor._id}`)
+//         await currentUser.save();
+//         res.redirect(`/users/${currentUser._id}/vendors/${vendor._id}`)
 
-    }catch(error){
-        console.log(error);
-        res.redirect("/");
+//     }catch(error){
+//         console.log(error);
+//         res.redirect("/");
 
-    }
-})
-//Edit / users/:userId/vendors/:vendorId/comments/:commentId/edit GET
-router.get("/users/userId/vendors/:vendorId/comments/:commentId/edit", async(req,res)=>{
-    const currentUser = await User.findById(req.session.user._id);
-    const vendor = currentUser.vendors.id(req.params.vendorId);
-    const comment = vendor.comments.id(req.params.commentId);
-    res.render("comments/edit.ejs", {comment,vendor})
-})
-//Update /users/:userId/vendors/:vendorId/comments/:commentId PUT
-router.put("/users/:userId/vendors/:vendorId/comments/:commentId", async(req,res)=>{
-    try{
+//     }
+// })
+// //Edit / users/:userId/vendors/:vendorId/comments/:commentId/edit GET
+// router.get("/users/userId/vendors/:vendorId/comments/:commentId/edit", async(req,res)=>{
+//     const currentUser = await User.findById(req.session.user._id);
+//     const vendor = currentUser.vendors.id(req.params.vendorId);
+//     const comment = vendor.comments.id(req.params.commentId);
+//     res.render("comments/edit.ejs", {comment,vendor})
+// })
+// //Update /users/:userId/vendors/:vendorId/comments/:commentId PUT
+// router.put("/users/:userId/vendors/:vendorId/comments/:commentId", async(req,res)=>{
+//     try{
         
-    const currentUser = await User.findById(req.session.user._id);
-    const vendor = currentUser.vendors.id(req.params.vendorId);
-    const comment = vendor.comments.id(req.params.commentId);
-    //call set on subdocument to update it
-   comment.set(req.body);
+//     const currentUser = await User.findById(req.session.user._id);
+//     const vendor = currentUser.vendors.id(req.params.vendorId);
+//     const comment = vendor.comments.id(req.params.commentId);
+//     //call set on subdocument to update it
+//    comment.set(req.body);
 
-    await currentUser.save();
-    res.redirect(
-        `/users/${req.session.user._id}/vendors/${req.params.vendorId}`
-    )
+//     await currentUser.save();
+//     res.redirect(
+//         `/users/${req.session.user._id}/vendors/${req.params.vendorId}`
+//     )
 
-    }catch(error){
-        console.log(error);
-        res.redirect("/");
-    }
-})
-//Delete /users/:userId/vendors/:vendorId/comments/:commentId Delete
-router.delete("/users/:userId/vendors/:vendorId/comments/:commentId", async(req,res)=>{
-    try{
-        const currentUser = await User.findById(req.session.user._id);
-        const vendor = currentUser.vendors.id(req.params.vendorId);
-        vendor.comments.id(req.params.commentId).remove();
-        await currentUser.save();
+//     }catch(error){
+//         console.log(error);
+//         res.redirect("/");
+//     }
+// })
+// //Delete /users/:userId/vendors/:vendorId/comments/:commentId Delete
+// router.delete("/users/:userId/vendors/:vendorId/comments/:commentId", async(req,res)=>{
+//     try{
+//         const currentUser = await User.findById(req.session.user._id);
+//         const vendor = currentUser.vendors.id(req.params.vendorId);
+//         vendor.comments.id(req.params.commentId).remove();
+//         await currentUser.save();
 
-        res.redirect(`/users/${req.session.user._id}/vendors/${vendor._id}`)
+//         res.redirect(`/users/${req.session.user._id}/vendors/${vendor._id}`)
 
-    }catch(error){
-        console.log(error);
-        res.redirect("/");
-    }
-})
+//     }catch(error){
+//         console.log(error);
+//         res.redirect("/");
+//     }
+// })
 
 
 

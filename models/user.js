@@ -2,17 +2,12 @@ const mongoose= require("mongoose");
 
 //subschemas
 
-const commentSchema = new mongoose.Schema({
-    text: String,
-    
-
-})
 
 const vendorSchema = new mongoose.Schema({
     company: {
         type: String,
         required: true,
-        unique: true,
+        
     },
 
     recommend: {
@@ -35,7 +30,7 @@ const vendorSchema = new mongoose.Schema({
     },
 
 
-    comments: [commentSchema]
+    
 
 })
 

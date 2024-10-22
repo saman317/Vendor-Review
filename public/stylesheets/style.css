@@ -21,13 +21,16 @@ h1{
     color:#BC8F8F;
     font-size:4.0em;
     font-weight: bold;
+    margin-bottom: 5px;
 
 
 }
 
 p{
-    color:#556B2F;
+    color:#6B8E23;
     font-size:1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .auth-link,
@@ -70,7 +73,7 @@ form{
     flex-direction:column;
     justify-content: space-evenly;
     font-size: 2.0em;
-    color:#556B2F;
+    color:#6B8E23;
     font-weight:bold;
    
 
@@ -79,10 +82,51 @@ form{
 button{
     padding: 5px;
     background-color:#DCDCDC ;
-    color:#556B2F;
-    border-radius: 30px;
+    color:#6B8E23;
+    border-radius: 20px;
     margin: 10px 0;
     font-size:0.5em;
+    border-color:#556B2F ;
 
 
+}
+
+@media (max-width: 768px) {
+    body {
+        height: 100vh; 
+        padding: 20px; 
+        background-size:cover;
+        background-position: center;
+    }
+
+    h1 {
+        font-size: 2.5em; 
+    }
+
+    p {
+        font-size: 1.5em; 
+    }
+
+    .auth-link,
+    .vendor-review,
+    .add-vendor,
+    .all-vendors,
+    .edit,
+    .vendor-company {
+        font-size: 1.2em; 
+    }
+
+    .signin-container,
+    .signup-container {
+        font-size: 1.2em; 
+    }
+
+    form {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 1em; 
+        padding: 5px; 
+    }
 }
