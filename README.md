@@ -8,7 +8,7 @@ VendorTea is an app where you can track down party related vendors that a person
 
 ## Getting Started
 
-link: 
+link: https://vendor-tea-09d2668448c5.herokuapp.com/
 
 ![WireFrame](IMG_1242.jpeg)
 
